@@ -44,7 +44,9 @@ def BoyerMoorePatternSearching(pat,text):
             Shift the pattern so that the next character in text aligns with the last occurrence of it in pattern. 
             The condition NoOfShifts+patternLength < textLength is necessary for the case when pattern occurs at the end of text
             """
-            NoOfShifts += patternLength - badChar[ord(text[NoOfShifts+patternLength])] if patternLength+ NoOfShifts < textLength else 1
+            # You can write either on of these
+            NoOfShifts += patternLength + 1 if patternLength+ NoOfShifts < textLength else 1
+            # NoOfShifts += patternLength - badChar[ord(text[NoOfShifts+patternLength])] if patternLength+ NoOfShifts < textLength else 1
             
         else:
             """
